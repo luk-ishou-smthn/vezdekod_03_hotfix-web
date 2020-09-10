@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/vezdekod_03_hotfix-web/static/css/main.52c11fd2.chunk.css",
+    "main.js": "/vezdekod_03_hotfix-web/static/js/main.31b769b8.chunk.js",
+    "main.js.map": "/vezdekod_03_hotfix-web/static/js/main.31b769b8.chunk.js.map",
+    "runtime-main.js": "/vezdekod_03_hotfix-web/static/js/runtime-main.c7e10820.js",
+    "runtime-main.js.map": "/vezdekod_03_hotfix-web/static/js/runtime-main.c7e10820.js.map",
+    "static/js/2.2361b3c0.chunk.js": "/vezdekod_03_hotfix-web/static/js/2.2361b3c0.chunk.js",
+    "static/js/2.2361b3c0.chunk.js.map": "/vezdekod_03_hotfix-web/static/js/2.2361b3c0.chunk.js.map",
+    "index.html": "/vezdekod_03_hotfix-web/index.html",
+    "precache-manifest.d5019e21fb4b96f31ec70774d2ac8a88.js": "/vezdekod_03_hotfix-web/precache-manifest.d5019e21fb4b96f31ec70774d2ac8a88.js",
+    "service-worker.js": "/vezdekod_03_hotfix-web/service-worker.js",
+    "static/css/main.52c11fd2.chunk.css.map": "/vezdekod_03_hotfix-web/static/css/main.52c11fd2.chunk.css.map",
+    "static/js/2.2361b3c0.chunk.js.LICENSE.txt": "/vezdekod_03_hotfix-web/static/js/2.2361b3c0.chunk.js.LICENSE.txt",
+    "static/media/1.png": "/vezdekod_03_hotfix-web/static/media/1.dfc54362.png",
+    "static/media/2.png": "/vezdekod_03_hotfix-web/static/media/2.20489759.png",
+    "static/media/3.png": "/vezdekod_03_hotfix-web/static/media/3.dbf82c38.png",
+    "static/media/4.png": "/vezdekod_03_hotfix-web/static/media/4.e671d539.png",
+    "static/media/burger.png": "/vezdekod_03_hotfix-web/static/media/burger.35bcd067.png",
+    "static/media/check-symbol.svg": "/vezdekod_03_hotfix-web/static/media/check-symbol.dd480b0d.svg",
+    "static/media/edit.svg": "/vezdekod_03_hotfix-web/static/media/edit.3e408ef2.svg",
+    "static/media/kfc.png": "/vezdekod_03_hotfix-web/static/media/kfc.4fd2ba47.png",
+    "static/media/mcdac.png": "/vezdekod_03_hotfix-web/static/media/mcdac.60464810.png",
+    "static/media/refresh-button.svg": "/vezdekod_03_hotfix-web/static/media/refresh-button.36053a5b.svg",
+    "static/media/sub.png": "/vezdekod_03_hotfix-web/static/media/sub.4eb05fdd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c7e10820.js",
+    "static/js/2.2361b3c0.chunk.js",
+    "static/css/main.52c11fd2.chunk.css",
+    "static/js/main.31b769b8.chunk.js"
+  ]
+}
