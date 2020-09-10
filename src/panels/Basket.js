@@ -121,10 +121,8 @@ const Basket = function({ match: { params: { areaId, itemId } }, foodAreas, orde
         <div className='Place__choice-item'>
           <span>Назначить</span>
           <input
+            type='time'
             value={ time }
-            onFocus={ () => {
-              setFaster(false)
-            } }
             onChange={ (event) => {
               setFaster(false)
               setTime(event.target.value)
