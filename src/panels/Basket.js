@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
+import * as store from 'store2'
 import accounting from 'accounting'
 
 import Checkbox from './Checkbox'
@@ -8,11 +9,19 @@ import edit from '../img/edit.svg'
 import './place.css'
 
 const Basket = function({ match: { params: { areaId, itemId } }, foodAreas, order }) {
-  const [faster, setFaster] = useState(true)
-  const [time, setTime] = useState('')
-  const [selfService, setSelfService] = useState(false)
+  const [faster, setFaster] = useState(store.get('basket.faster', true))
+  const [time, setTime] = useState(store.get('basket.time', ''))
+  const [selfService, setSelfService] = useState(store.get('basket.selfService', false))
   const area = foodAreas.filter(area => area.id === areaId)[0]
   const item = area.items.filter(item => item.id === itemId)[0]
+
+  // Хук на изменение состояний, для сохранения в хранилище
+  useEffect(() => {
+    // Сохраняем состояния переменных
+    store.set('basket.faster', faster)
+    store.set('basket.time', time)
+    store.set('basket.selfService', selfService)
+  })
 
   const [price, products] = useMemo(() => {
     const foodIds = new Set((item.foods || []).map(item => item.id))
