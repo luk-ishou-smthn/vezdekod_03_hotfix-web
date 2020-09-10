@@ -60,10 +60,12 @@ const Orders = ({ order, orderStatuses, foodAreas, setCanceledOrder, setActiveOr
               if (food.id in order) {
                 const { item: { price }, count } = order[food.id]
 
-                return result + parseInt(price) * parseInt(count)
+                // TODO: ну это моветон, в real-world приложениях руки бы оторвал тому кто так сделает
+                return parseInt(result) + parseInt(price) * parseInt(count)
               }
 
-              return result
+              // TODO: добавить зашщиту от отрицательных значений
+              return parseInt(result)
             }, 0),
             link: `/order/${area.id}/${item.id}`,
           }

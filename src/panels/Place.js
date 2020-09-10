@@ -18,8 +18,8 @@ const Place = ({ item, order, onIncrementPosition, onDecrementPosition, area }) 
       })
       .reduce((result, value) => {
         const { count, item: { price } } = value
-
-        return result + parseInt(price) * parseInt(count)
+        // TODO: ну это моветон, в real-world приложениях руки бы оторвал тому кто так сделает
+        return parseInt(result) + parseInt(price) * parseInt(count)
       }, 0)
 
     return accounting.formatNumber(result, 0, ' ')
@@ -100,9 +100,19 @@ const Place = ({ item, order, onIncrementPosition, onDecrementPosition, area }) 
         ))}
       </ul>
       <footer className='Place__footer'>
-        <Link to={ `/basket/${area.id}/${item.id}` } className='Place__order'>
-          Оформить заказ ({price})
-        </Link>
+        {
+          // TODO: в real-world приложениях должна быть проверка на количество позиций в заказе, а не на сумму заказа
+          // Т.к price в человеко-понятном формате, надо привести обратно к типу Number
+          accounting.unformat(price) > 0 ? (
+            <Link to={ `/basket/${area.id}/${item.id}` } className='Place__order'>
+              Оформить заказ ({price})
+            </Link>
+          ) : (
+            <Link className='Place__order Place__order--disabled'>
+              Оформить заказ
+            </Link>
+          )
+        }
       </footer>
     </div>
   )
