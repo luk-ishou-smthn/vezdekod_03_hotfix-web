@@ -1,34 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-import edit from '../img/edit.svg';
-import './Home.css';
+import edit from '../img/edit.svg'
+import './Home.css'
 
 const Home = ({ foodAreas, order }) => (
-  <React.Fragment>
-    <ul className="Home">
-      {foodAreas.map((area) => (
+  <>
+    <ul className='Home'>
+      {foodAreas.map(area => (
         <li
-          key={area.id}
+          key={ area.id }
         >
-          <div className="Home__fixed-content">
-            <header className="Home__header">
-              <h1 className="Home__head">
-                <Link to="/" className="Home__logo">
+          <div className='Home__fixed-content'>
+            <header className='Home__header'>
+              <h1 className='Home__head'>
+                <Link to='/' className='Home__logo'>
                   {area.name}
                 </Link>
               </h1>
-              <Link to="/" className="Home__change-tz">
+              <Link to='/' className='Home__change-tz'>
                 <img
-                  className="Home__edit"
-                  alt="change-profile"
-                  src={edit}
+                  className='Home__edit'
+                  alt='change-profile'
+                  src={ edit }
                 />
               </Link>
             </header>
-            <ul className="Home__tabs">
-              <li className="Home__tab Home__tab_active">
+            <ul className='Home__tabs'>
+              <li className='Home__tab Home__tab_active'>
                 Еда
               </li>
               {/* <li className="Home__tab Home__tab_disabled">
@@ -39,25 +39,25 @@ const Home = ({ foodAreas, order }) => (
               </li> */}
             </ul>
           </div>
-          <ul className="Home__items">
+          <ul className='Home__items'>
             {area.items.map(item => (
               <li
-                className="Home__item"
-                key={item.id}
+                className='Home__item'
+                key={ item.id }
               >
                 <Link
-                  className="Home__food-link"
-                  to={item.link}
+                  className='Home__food-link'
+                  to={ item.link }
                 >
                   <img
-                    alt={item.name}
-                    className="Home__image"
-                    src={item.image}
+                    alt={ item.name }
+                    className='Home__image'
+                    src={ item.image }
                   />
-                  <h3 className="Home__food-name">
+                  <h3 className='Home__food-name'>
                     {item.name}
                   </h3>
-                  <p className="Home__food-type">{item.description}</p>
+                  <p className='Home__food-type'>{item.description}</p>
                 </Link>
               </li>
             ))}
@@ -66,14 +66,14 @@ const Home = ({ foodAreas, order }) => (
       ))}
     </ul>
     {Object.keys(order).length !== 0 && (
-      <footer className="Footer">
-        <Link to="/orders" className="Footer__orders">
-					Мои заказы
+      <footer className='Footer'>
+        <Link to='/orders' className='Footer__orders'>
+          Мои заказы
         </Link>
       </footer>
     )}
-  </React.Fragment>
-);
+  </>
+)
 
 Home.propTypes = {
   foodAreas: PropTypes.arrayOf(PropTypes.shape({
@@ -86,10 +86,10 @@ Home.propTypes = {
       url: PropTypes.string,
     })),
   })),
-};
+}
 
 Home.defaultProps = {
   foodAreas: [],
-};
+}
 
-export default Home;
+export default Home

@@ -1,27 +1,26 @@
-import React from 'react';
+import React from 'react'
 
-import './Checkbox.css';
-import Check from '../img/check-symbol.svg';
-
+import './Checkbox.css'
+import Check from '../img/check-symbol.svg'
 
 const Checkbox = ({ checked, onToggle }) => {
   return (
-    <div className="Checkbox">
+    <div className='Checkbox'>
       <input
-        checked={checked}
-        onChange={onToggle}
-        type="checkbox"
+        checked={ checked }
+        onChange={ onToggle }
+        type='checkbox'
       />
       <img
-        alt="custom checkbox logo"
-        src={Check}
+        alt='custom checkbox logo'
+        src={ Check }
       />
     </div>
-  );
-};
+  )
+}
 
 Checkbox.defaultProps = {
-  onToggle: () => {},
-};
+  onToggle: () => { },
+}
 
-export default Checkbox;
+export default Checkbox
