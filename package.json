@@ -25,9 +25,9 @@
     "react-scripts": "^3.4.3"
   },
   "dependencies": {
-    "@vkontakte/icons": "^1.10.0",
-    "@vkontakte/vk-connect": "^1.9.1",
-    "@vkontakte/vkui": "^2.34.0",
+    "@vkontakte/icons": "^1.40.0",
+    "@vkontakte/vk-bridge": "^2.2.8",
+    "@vkontakte/vkui": "^3.12.5",
     "accounting": "^0.4.1",
     "core-js": "^3.6.5",
     "prop-types": "^15.7.2",
