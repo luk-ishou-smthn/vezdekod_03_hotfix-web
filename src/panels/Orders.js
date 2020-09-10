@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import refresh from '../img/refresh-button.svg'
 import './orders.css'
 
-const Orders = ({ order, orderStatuses, foodAreas, setFinishedOrder, setActiveOrder }) => {
+const Orders = ({ order, orderStatuses, foodAreas, setCanceledOrder, setActiveOrder }) => {
   const activeOrders = useMemo(() => {
     const activeOrdersList = Object.keys(orderStatuses)
       .filter(shopId => orderStatuses[shopId] === 'ACTIVE')
@@ -100,9 +100,7 @@ const Orders = ({ order, orderStatuses, foodAreas, setFinishedOrder, setActiveOr
             </Link>
             <button
               className='Orders__cancel'
-              onClick={ () => {
-                setFinishedOrder({ itemId: order.shopId })
-              } }
+              onClick={ () => setCanceledOrder({ itemId: order.shopId }) }
             >
               Отм.
             </button>
@@ -122,9 +120,7 @@ const Orders = ({ order, orderStatuses, foodAreas, setFinishedOrder, setActiveOr
             </div>
             <button
               className='Orders__repeat'
-              onClick={ () => {
-                setActiveOrder({ itemId: order.shopId })
-              } }
+              onClick={ () => setActiveOrder({ itemId: order.shopId }) }
             >
               <img
                 className='Orders__refresh'
@@ -142,6 +138,7 @@ const Orders = ({ order, orderStatuses, foodAreas, setFinishedOrder, setActiveOr
 Orders.defaultProps = {
   setFinishedOrder: () => { },
   setActiveOrder: () => { },
+  setCanceledOrder: () => {},
 }
 
 export default Orders

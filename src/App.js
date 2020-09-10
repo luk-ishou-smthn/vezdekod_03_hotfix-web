@@ -145,6 +145,14 @@ const App = () => {
               setOrderStatuses(nextStatuses)
               localStorage.setItem('orderStatuses', JSON.stringify(nextStatuses))
             } }
+            setCanceledOrder={ ({ itemId }) => {
+              const nextStatuses = { ...orderStatuses }
+
+              nextStatuses[itemId] = 'CANCELED'
+
+              setOrderStatuses(nextStatuses)
+              localStorage.setItem('orderStatuses', JSON.stringify(nextStatuses))
+            } }
           />
         </Route>
         <Route path='/basket/:areaId/:itemId' exact>
@@ -173,6 +181,14 @@ const App = () => {
               const nextStatuses = { ...orderStatuses }
 
               nextStatuses[itemId] = 'ACTIVE'
+
+              setOrderStatuses(nextStatuses)
+              localStorage.setItem('orderStatuses', JSON.stringify(nextStatuses))
+            } }
+            setCanceledOrder={ ({ itemId }) => {
+              const nextStatuses = { ...orderStatuses }
+
+              nextStatuses[itemId] = 'CANCELED'
 
               setOrderStatuses(nextStatuses)
               localStorage.setItem('orderStatuses', JSON.stringify(nextStatuses))

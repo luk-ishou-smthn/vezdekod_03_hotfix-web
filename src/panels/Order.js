@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom'
 import edit from '../img/edit.svg'
 import './place.css'
 
-const Order = ({ match: { params: { areaId, itemId } }, history, foodAreas, setActiveOrder }) => {
+const Order = ({ match: { params: { areaId, itemId } }, history, foodAreas, setCanceledOrder, setActiveOrder }) => {
   const area = foodAreas.filter(area => area.id === areaId)[0]
   const item = area.items.filter(item => item.id === itemId)[0]
 
@@ -75,6 +75,7 @@ const Order = ({ match: { params: { areaId, itemId } }, history, foodAreas, setA
 
 Order.defaultProps = {
   setActiveOrder: () => { },
+  setCanceledOrder: () => {},
 }
 
 export default withRouter(Order)
