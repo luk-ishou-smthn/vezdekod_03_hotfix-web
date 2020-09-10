@@ -34,7 +34,7 @@ const Place = ({ item, order, onIncrementPosition, onDecrementPosition, area }) 
               {area.name}
             </Link>
           </h1>
-          <Link to='/edit' className='Place__change-tz'>
+          <Link to='/' className='Place__change-tz'>
             <img
               alt='change-profile'
               src={ edit }

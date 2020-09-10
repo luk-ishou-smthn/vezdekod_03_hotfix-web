@@ -51,7 +51,7 @@ const Basket = function({ match: { params: { areaId, itemId } }, foodAreas, orde
               {area.name}
             </Link>
           </h1>
-          <Link to='/edit' className='Place__change-tz'>
+          <Link to={ `/place/${areaId}/${itemId}` } className='Place__change-tz'>
             <img
               alt='change-profile'
               src={ edit }

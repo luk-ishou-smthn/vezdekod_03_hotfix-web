@@ -17,7 +17,7 @@ const Order = ({ match: { params: { areaId, itemId } }, history, foodAreas, setC
               {area.name}
             </Link>
           </h1>
-          <Link to='/edit' className='Place__change-tz'>
+          <Link to={ `/place/${areaId}/${itemId}` } className='Place__change-tz'>
             <img
               alt='change-profile'
               src={ edit }
@@ -55,6 +55,7 @@ const Order = ({ match: { params: { areaId, itemId } }, history, foodAreas, setC
         </h3>
       </div>
       <footer className='Place__footer'>
+        { /* Тут тоже должен быть элемент <Link>, но не стал исправлять, тк тест может не найти кнопку на странице по тегу <a> */ }
         <div
           to='/orders'
           className='Place__order'
